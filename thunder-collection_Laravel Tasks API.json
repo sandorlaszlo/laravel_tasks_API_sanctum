@@ -1,0 +1,278 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Laravel Tasks API",
+    "dateExported": "2024-02-10T08:47:49.678Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "504b418e-8fbb-4fa6-8a96-66119ea6885b",
+            "name": "Users",
+            "containerId": "",
+            "created": "2024-02-10T08:47:07.899Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "56fdf95a-6813-45b0-86b2-5e9cab687238",
+            "name": "Tasks",
+            "containerId": "",
+            "created": "2024-02-10T08:47:25.226Z",
+            "sortNum": 20000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "9808a590-775b-4577-a13b-e450e31bbcc4",
+            "colId": "9185a55c-7a0b-47d7-a9a2-c1552090460f",
+            "containerId": "504b418e-8fbb-4fa6-8a96-66119ea6885b",
+            "name": "Register user",
+            "url": "http://127.0.0.1:8000/api/register",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-02-11T11:26:21.317Z",
+            "modified": "2023-02-11T13:17:11.594Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\" : \"slo\",\n  \"email\" : \"slo@jedlik.eu\",\n  \"password\" : \"teszt1234\",\n  \"password_confirmation\" : \"teszt1234\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "e4e1f71d-6f72-4c32-944a-fc79e4700570",
+            "colId": "9185a55c-7a0b-47d7-a9a2-c1552090460f",
+            "containerId": "56fdf95a-6813-45b0-86b2-5e9cab687238",
+            "name": "Get all Tasks",
+            "url": "http://127.0.0.1:8000/api/tasks",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-02-11T16:18:02.756Z",
+            "modified": "2024-02-10T08:41:56.349Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "1|tpMmrHt7QtkcpvfunWvMERYcbOlQxEinyerzkHcI"
+            },
+            "tests": []
+        },
+        {
+            "_id": "b17505cb-0c86-434f-a3b8-f9611874bedf",
+            "colId": "9185a55c-7a0b-47d7-a9a2-c1552090460f",
+            "containerId": "504b418e-8fbb-4fa6-8a96-66119ea6885b",
+            "name": "Logout user",
+            "url": "http://127.0.0.1:8000/api/logout",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-02-11T11:29:58.627Z",
+            "modified": "2023-02-11T19:05:39.856Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "3|mIaclHTBQQoBlGsBSL562WdGiSkm1263b38hzSFV"
+            },
+            "tests": []
+        },
+        {
+            "_id": "77a32953-b4c4-4c3d-93bb-bb56c4567302",
+            "colId": "9185a55c-7a0b-47d7-a9a2-c1552090460f",
+            "containerId": "56fdf95a-6813-45b0-86b2-5e9cab687238",
+            "name": "Search Task",
+            "url": "http://127.0.0.1:8000/api/tasks/251",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-02-11T18:30:57.128Z",
+            "modified": "2024-02-10T08:46:03.306Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "1|tpMmrHt7QtkcpvfunWvMERYcbOlQxEinyerzkHcI"
+            },
+            "tests": []
+        },
+        {
+            "_id": "6e972803-9c1b-496a-9218-710bf7a99bdd",
+            "colId": "9185a55c-7a0b-47d7-a9a2-c1552090460f",
+            "containerId": "504b418e-8fbb-4fa6-8a96-66119ea6885b",
+            "name": "Login user",
+            "url": "http://127.0.0.1:8000/api/login",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-02-11T11:27:18.741Z",
+            "modified": "2023-02-11T15:55:48.706Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\" : \"slo@jedlik.eu\",\n  \"password\" : \"teszt1234\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "d04fad32-ef2a-458c-8865-87b7e85aa583",
+            "colId": "9185a55c-7a0b-47d7-a9a2-c1552090460f",
+            "containerId": "56fdf95a-6813-45b0-86b2-5e9cab687238",
+            "name": "Create Task",
+            "url": "http://127.0.0.1:8000/api/tasks",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-02-11T18:14:05.364Z",
+            "modified": "2024-02-10T08:45:56.538Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\" : \"New Task\",\n  \"description\" : \"New Description\",\n  \"priority\" : \"low\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "1|tpMmrHt7QtkcpvfunWvMERYcbOlQxEinyerzkHcI"
+            },
+            "tests": []
+        },
+        {
+            "_id": "8c4f4455-54ff-4412-90b2-e4f9a67022c3",
+            "colId": "9185a55c-7a0b-47d7-a9a2-c1552090460f",
+            "containerId": "56fdf95a-6813-45b0-86b2-5e9cab687238",
+            "name": "Update Task",
+            "url": "http://127.0.0.1:8000/api/tasks/251",
+            "method": "PATCH",
+            "sortNum": 40000,
+            "created": "2023-02-11T18:38:57.731Z",
+            "modified": "2024-02-10T08:46:29.626Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"description\" : \"valami más\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "1|tpMmrHt7QtkcpvfunWvMERYcbOlQxEinyerzkHcI"
+            },
+            "tests": []
+        },
+        {
+            "_id": "f932531e-87ea-4d95-bf08-8b2e5924ff07",
+            "colId": "9185a55c-7a0b-47d7-a9a2-c1552090460f",
+            "containerId": "56fdf95a-6813-45b0-86b2-5e9cab687238",
+            "name": "Delete Task",
+            "url": "http://127.0.0.1:8000/api/tasks/251",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2023-02-11T18:46:48.662Z",
+            "modified": "2024-02-10T08:46:46.586Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "1|tpMmrHt7QtkcpvfunWvMERYcbOlQxEinyerzkHcI"
+            },
+            "tests": []
+        }
+    ]
+}
