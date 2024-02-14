@@ -20,12 +20,15 @@ class TaskController extends Controller
      */
     public function index()
     {
-        // return Task::with('user')->where('user_id', Auth::user()->id)->get();
+        if (Auth::user()->is_admin) {
+            return TaskResource::collection(Task::all());
+        }
 
         return TaskResource::collection(
             Task::where('user_id', Auth::user()->id)->get()
         );
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -55,9 +58,11 @@ class TaskController extends Controller
      */
     public function show(Task $task)
     {
-        if (Auth::user()->id !== $task->user->id) {
-            return $this->error('', 'You are not authorized to make this request.', 403);
-        }
+        $this->authorize('view', $task);
+
+        // if (Auth::user()->id !== $task->user->id) {
+        //     return $this->error('', 'You are not authorized to make this request.', 403);
+        // }
         return new TaskResource($task);
     }
 
@@ -70,9 +75,13 @@ class TaskController extends Controller
      */
     public function update(Request $request, Task $task)
     {
-        if (Auth::user()->id !== $task->user_id) {
+        if ($request->user()->cannot('update', $task)) {
             return $this->error('', 'You are not authorized to make this request', 403);
         }
+
+        // if (Auth::user()->id !== $task->user_id) {
+        //     return $this->error('', 'You are not authorized to make this request', 403);
+        // }
 
         $task->update($request->all());
 
@@ -87,9 +96,11 @@ class TaskController extends Controller
      */
     public function destroy(Task $task)
     {
-        if (Auth::user()->id !== $task->user_id) {
-            return $this->error('', 'You are not authorized to make this request', 403);
-        }
+        $this->authorize('delete', $task);
+
+        // if (Auth::user()->id !== $task->user_id) {
+        //     return $this->error('', 'You are not authorized to make this request', 403);
+        // }
 
         $task->delete();
 

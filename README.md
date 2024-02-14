@@ -178,6 +178,33 @@ A Bearer autentikáció használata megkönnyíti a fejlesztőknek a RESTful API
     - `php artisan schedule:list`
     - `php artisan schedule:work` -> tesztelési céllal - 1 percenként lefut
 
+### 16. Jogosultságok refaktorálása Policy használatával
+
+<a href="https://laravel.com/docs/10.x/authorization#creating-policies">https://laravel.com/docs/10.x/authorization#creating-policies</a>
+
+- is_admin mező hozzáadása a User modellhez
+    
+    ```
+    php artisan make:migration add_is_admin_to_users_table
+    php artisan migrate
+    ```
+
+- `TaskPolicy` osztály létrehozása
+
+    `php artisan make:policy TaskPolicy --model=Task`
+
+- `TaskPoilicy` metódusok szerkesztése
+
+- `TaskController` osztályban a metódusok átdolgozása
+
+- `TaskPolicy` osztályban a `before()` metódus hozzáadása
+
+- Az admin user-nek mindenhez legyen joga: `before()` metódus hozzáadása a `TaskPolicy` osztályhoz.
+
+    <a href="https://laravel.com/docs/10.x/authorization#policy-filters">https://laravel.com/docs/10.x/authorization#policy-filters</a>
+
+
+
 ## ThunderClient export
 `/thunder-collection_Laravel Tasks API.json`
 
