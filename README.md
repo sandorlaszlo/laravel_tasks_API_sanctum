@@ -204,6 +204,24 @@ A Bearer autentikáció használata megkönnyíti a fejlesztőknek a RESTful API
     <a href="https://laravel.com/docs/10.x/authorization#policy-filters">https://laravel.com/docs/10.x/authorization#policy-filters</a>
 
 
+## SWAGGER dokumentáció
+
+```
+composer require dedoc/scramble
+composer require doctrine/dbal
+```
+
+composer.json-ban: downgrade-elni kell 3.x-re:
+
+```
+"require": {
+        ...
+        "doctrine/dbal": "^3.0"
+        ...
+```
+```
+composer update
+```
 
 ## ThunderClient export
 `/thunder-collection_Laravel Tasks API.json`
