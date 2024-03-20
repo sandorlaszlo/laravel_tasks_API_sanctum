@@ -27,5 +27,5 @@ Route::post('/register', [AuthController::class, 'register']);
 // Protected routes
 Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('/logout', [AuthController::class, 'logout']);
-    Route::resource('/tasks', TaskController::class);
+    Route::apiResource('/tasks', TaskController::class);
 });

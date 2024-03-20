@@ -203,6 +203,34 @@ A Bearer autentikáció használata megkönnyíti a fejlesztőknek a RESTful API
 
     <a href="https://laravel.com/docs/10.x/authorization#policy-filters">https://laravel.com/docs/10.x/authorization#policy-filters</a>
 
+## Automata tesztek
+
+phpunit.xml-ben beállítjuk a teszt adatbázist sqlite memory-ra.
+
+```
+<env name="DB_CONNECTION" value="sqlite"/>
+<env name="DB_DATABASE" value=":memory:"/>
+```
+
+Minden egyes teszt lefuttatása előtt kiürítjük az adatbázist:
+```
+use RefreshDatabase;
+```
+
+Lehetséges Assertion-ök: https://laravel.com/docs/10.x/http-tests#available-assertions
+
+Backend esetén az `assertStatus()` és az `assertJson...()` kezdetűek a legrelevánsabbak.
+
+Feature tesztek létrehozása:
+```
+php artisan make:test LoginTest
+php artisan make:test TaskTest
+```
+
+Tesztek futtatása:
+```
+php artisan test
+```
 
 ## SWAGGER dokumentáció
 

@@ -20,6 +20,7 @@ class TaskController extends Controller
      */
     public function index()
     {
+
         if (Auth::user()->is_admin) {
             return TaskResource::collection(Task::all());
         }
@@ -104,6 +105,6 @@ class TaskController extends Controller
 
         $task->delete();
 
-        return response(null, 204);
+        return response()->noContent();;
     }
 }
